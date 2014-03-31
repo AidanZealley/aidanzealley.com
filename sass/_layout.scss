@@ -1,0 +1,96 @@
+.padded {
+	@include padding(2em);
+}
+.padded-light {
+	@include padding(1em);
+}
+.padded-tall {
+	@include verticalPadding(4em);
+	@include horizontalPadding(2em);
+}
+.padded-tallx2 {
+	@include verticalPadding(8em);
+	@include horizontalPadding(2em);
+}
+
+.padded-top {
+	@include verticalPadding(2em);
+}
+
+.container {
+	max-width: 70em;
+	margin: 0 auto;
+
+	.row {
+		margin-right: -#{$gap/2};
+		margin-left: -#{$gap/2};
+
+		@media screen and (max-width: $mediumBreak) {
+			margin-right: -#{$gap/2/100*75};
+			margin-left: -#{$gap/2/100*75};
+		}
+		@media screen and (max-width: $smallBreak) {
+			margin-right: -#{$gap/2/100*65};
+			margin-left: -#{$gap/2/100*65};
+		}
+	}
+}
+.container-thin {
+	@extend .container;
+	max-width: 50em;
+}
+.container-thinner {
+	@extend .container;
+	max-width: 30em;
+}
+
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+.row {
+	@extend .clear;
+
+	.row {
+		margin: 0 -$gap;
+	}
+}
+.col {
+	@include horizontalPadding($gap/2);
+
+	@media only screen {
+		@include box-sizing(border-box);
+		float: left;
+		width: 100%;
+	}
+}
+.half {
+	margin: 0 0 $gap 0;
+
+	@media only screen and (min-width: 30em) {
+		width: 50%;
+	}
+}
+.third {
+	margin: 0 0 $gap 0;
+
+	@media only screen and (min-width: 40em) {
+		width: 33.3333%;
+	}
+	@media only screen and (min-width: 30em) and (max-width: 40em) {
+		width: 50%;
+	}
+}
+.quarter {
+	margin: 0 0 $gap 0;
+
+	@media only screen and (min-width: 45em) {
+		width: 25%;
+	}
+	@media only screen and (min-width: 30em) and (max-width: 45em) {
+		width: 50%;
+	}
+}

@@ -1,0 +1,59 @@
+/* Helper Classes */
+.clear {
+	&:before, &:after {
+	    content: " ";
+	    display: table;
+	}
+
+	&:after {
+	    clear: both;
+	}
+}
+
+/* Helper Mixins */
+@mixin box-sizing($sizing) {
+	box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+}
+
+@mixin padding($startPadding) {
+	@include box-sizing(border-box);
+	padding: $startPadding;
+	
+	@media screen and (max-width: $mediumBreak) {
+		padding: $startPadding/100*75;
+	}
+	@media screen and (max-width: $smallBreak) {
+		padding: $startPadding/100*65;
+	}
+}
+
+@mixin horizontalPadding($startPadding) {
+	@include box-sizing(border-box);
+	padding-right: $startPadding;
+	padding-left: $startPadding;
+	
+	@media screen and (max-width: $mediumBreak) {
+		padding-right: $startPadding/100*75;
+		padding-left: $startPadding/100*75;
+	}
+	@media screen and (max-width: $smallBreak) {
+		padding-right: $startPadding/100*65;
+		padding-left: $startPadding/100*65;
+	}
+}
+
+@mixin verticalPadding($startPadding) {
+	@include box-sizing(border-box);
+	padding-top: $startPadding;
+	padding-bottom: $startPadding;
+	
+	@media screen and (max-width: $mediumBreak) {
+		padding-top: $startPadding/100*75;
+		padding-bottom: $startPadding/100*75;
+	}
+	@media screen and (max-width: $smallBreak) {
+		padding-top: $startPadding/100*65;
+		padding-bottom: $startPadding/100*65;
+	}
+}

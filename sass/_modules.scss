@@ -1,0 +1,76 @@
+.block {
+	@extend .clear;
+	display: block;
+
+	&.rounded {
+		border-radius: 0.25em;
+	}
+
+	&.white {
+		background: #fff;
+	}
+	&.light {
+		background: $lightGrey;
+	}
+	&.medium {
+		background: $mediumGrey;
+	}
+	&.dark {
+		background: $darkGrey;
+
+		h1 {
+			color: $lightGrey;
+		}
+
+		h2 {
+			color: darken($lightGrey, 10%);
+		}
+
+		hr {
+			background: lighten($darkGrey, 8%);
+		}
+	}
+}
+
+.infocard {
+	@include padding(2em);
+	@extend .animated;
+	margin: 0 0 2em 0;
+	background: #fff;
+	border-radius: 0.25em;
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	box-shadow: 0 0.5em 5em rgba($darkGrey, 0.25);
+
+	h1 {
+		margin: 0.5em 0;
+	}
+}
+
+.breakout {
+	@extend .animated;
+	width: 70em;
+	margin: 2em 0 3em -12em;
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	background: $darkGrey;
+	box-shadow: 0 0.5em 3em rgba($darkGrey, 0.25);
+
+	img {
+		display: block;
+	}
+
+	@media screen and (max-width: 74em) {
+		width: 100%;
+		margin: 2em 0;
+	}
+}
+
+.intro {
+	@include verticalPadding(4em);
+	@include horizontalPadding(2em);
+	@extend .container-thinner;
+	@extend .animated;
+	background: #fff;
+	border-radius: 0.25em;
+}

@@ -1,0 +1,98 @@
+html {
+	font-family: 'Lato', Sans-serif;	font-size: 100%;
+
+	@media only screen and (max-width: $mediumBreak) {
+		font-size: 92.5%;
+	}
+	@media only screen and (max-width: $smallBreak) {
+		font-size: 85%;
+	}
+}
+
+body {
+	position: relative;
+}
+
+h1 {
+	font-size: 3.2em;
+	font-weight: 200;
+	line-height: 1.2em;
+	margin: 0.1em 0 0.2em 0;
+	color: $darkGrey;
+	word-break: break-all;
+}
+
+h2 {
+	font-size: 1.4em;
+	font-weight: 400;
+	line-height: 1.2em;
+	margin: 0.3em 0 0.6em 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: darken($mediumGrey, 10%);
+}
+
+h3 {
+	font-size: 1.3em;
+	font-weight: 400;
+	line-height: 1.2em;
+	margin: 0.3em 0 0.6em 0;
+	color: $mediumGrey;
+}
+
+h4 {
+	font-size: 1.2em;
+	font-weight: 300;
+	line-height: 1.2em;
+	margin: 0.3em 0 0.6em 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: $mediumGrey;
+
+	em {
+		font-weight: 400;
+		color: $accent;
+	}
+}
+
+p {
+	font-size: 1.3em;
+	font-weight: 300;
+	line-height: 1.5em;
+	margin: 0.2em 0 0.4em 0;
+	color: lighten($darkGrey, 15%);
+
+	a:hover {
+		opacity: 0.6;
+	}
+
+	em {
+		color: darken($accent, 15%);
+	}
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	border: 0;
+}
+
+hr {
+	border:0;
+	height: 1px;
+	background: $lightGrey;
+	width: 50%;
+	margin: 3em 25%;
+
+	@media screen and (max-width: $mediumBreak) {
+		width: 60%;
+		margin: 2.5em 20%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		width: 70%;
+		margin: 2em 15%;
+	}
+}

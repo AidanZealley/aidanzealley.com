@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aidan Zealley - Portfolio</title>
+
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0' />
+		
+		<link rel="stylesheet" href="css/portfolio.css"></link>
+
+		<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Lato:200,300,400,900' rel='stylesheet' type='text/css'>
+
+		<!-- If browser is internet explorer run HTML5 compatibility code -->		
+		<!--[if IE]>
+		    <script src='js/html5.js'></script>  
+		<![endif]-->
+	</head>
+	<body class="cover fixed" style="background-image: url('pictures/prjectr-blur.jpg')">
+		<div class="padded">
+			<div class="container-thin">
+				<div class="infocard">
+					<a href="work.html" class="button light small"><span class="icon pull-left">&larr;</span>Work</a>
+					<header class="center">
+						<h1 class="center">Prjectr</h1>
+						<a href="http://prjectr.com" target="_blank" class="button accent large">Launch Project<span class="icon pull-right">&#128640;</span></a>
+					</header>
+
+					<hr/>
+
+					<h3 class="center">Prjectr is social network for sharing creative projects.</h3>
+
+					<div class="breakout delay 1">
+						<img src="pictures/prjectr-screen.jpg" width="100%"/>
+					</div>
+
+					<h2>Why Off Canvas?</h2>
+					<p>I started developing Off.canvas during a project that required the use of a hidden side panel, the kind seen often in native smartphone apps.</p>
+					<br/>
+
+					<h2>Requirements</h2>
+					<p>I needed to have the side panel(s) and the main page scroll independently and to maintain a fixed top bar during scrolling. As the panel slid in from the side I wanted the main part of the page to slide off screen, as it does in apps, rather than squash to fit the shrinking space.</p>
+					<p>Those requirements meant I had to turn the body element into a 'window' whose overflow is hidden and create the main and side sections as scrollable areas within that. To enable the scroll-ability of overflow:auto elements on older mobile operating systems such as iOS 4 and Android 2.3 I've used the Overthrow polyfill.</p>
+					<br/>
+
+					<h2>Realistic Animation</h2>
+					<p>Initially the main section covers the side panel(s) completely, then when the sliding is triggered the main section moves aside to reveal the side bar. In fact, the side bar is positioned only partially off screen so that during animation it moves at a slightly slower speed to the main section above it to create a layered effect.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="block light padded-tall">
+			<div class="container-thin center">
+				<a href="work.html" class="button medium small pull-left"><span class="icon pull-left">&larr;</span>Work</a>
+				<a href="hello.html" class="button medium small pull-right">Say hello<span class="icon pull-right">&#128222;</span></a>
+			</div>
+		</div>
+
+		<div class="block dark padded-tall">
+			<div class="container-thin">
+				<h2 class="center">Other Projects</h2>
+
+				<hr/>
+
+				<div class="row">
+					<div class="col third">
+						<a href="offcanvas.html" class="animated-link"><img src="pictures/offCanvas-thumb.jpg" width="100%"/></a>
+					</div>
+
+					<div class="col third">
+						<a href="caroline.html" class="animated-link"><img src="pictures/carolineHudson-thumb.jpg" width="100%"/></a>
+					</div>
+
+					<div class="col third">
+						<a href="ebor.html" class="animated-link"><img src="pictures/ebor-thumb.jpg" width="100%"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
