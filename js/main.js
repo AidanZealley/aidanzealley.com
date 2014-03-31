@@ -30,7 +30,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$('body').on('click', '#close-modal', function() {
+	$('body').on('click', '#close-modal, .modal-overlay', function() {
 		$('.modal-overlay').removeClass('bounceInUp');
 		$('.modal-overlay').addClass('bounceOutUp');
 		setTimeout(function(){$('.modal-overlay').remove();}, 800);

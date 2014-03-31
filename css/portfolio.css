@@ -916,5 +916,6 @@ ul.horizontal li {
   .modal img {
     position: relative;
     z-index: 100;
+    display: block;
     max-width: 100%;
     max-height: 100%; }
