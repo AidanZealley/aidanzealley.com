@@ -55,6 +55,8 @@
 	animation-name: fadeInUp;
 	background: $darkGrey;
 	box-shadow: 0 0.5em 3em rgba($darkGrey, 0.25);
+	border-radius: 0.15em;
+	overflow: hidden;
 
 	img {
 		display: block;
@@ -78,6 +80,7 @@
 .animated-link {
 	@extend .animated;
 	display: inline-block;
+	-webkit-transition: opacity 0.2s ease-in-out;
 
 	img {
 		box-shadow: 0 0.5em 2em rgba($darkGrey, 0.15);
@@ -119,5 +122,47 @@
 		a {
 			font-size: 4.2em;
 		}
+	}
+}
+
+.toggle {
+	@extend .round;
+	display: inline-block;
+	background: $darkGrey;
+	margin: 1em 0 0 0;
+	padding: 2px;
+
+	li {
+		display: inline;
+	}
+
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-size: 0.8em;
+		font-weight: 400;
+		text-decoration: none;
+		padding: 1em 2em;
+		color: $lightGrey;
+
+		&:hover {
+			color: $mediumGrey;
+		}
+
+		&.current {
+			@extend .round;
+			color: $accent;
+			background: #fff;
+		}
+	}
+}
+
+.thumbs {
+	@extend .container;
+	text-align: center;
+
+	img {
+		border-radius: 0.15em;
 	}
 }

@@ -68,6 +68,9 @@ table {
   .animated.delay2, .delay2.button, .delay2.infocard, .delay2.breakout, .delay2.intro, .delay2.animated-link, .social a.delay2 {
     -webkit-animation-delay: 0.4s;
     animation-delay: 0.4s; }
+  .animated.delay3, .delay3.button, .delay3.infocard, .delay3.breakout, .delay3.intro, .delay3.animated-link, .social a.delay3 {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s; }
 
 @-webkit-keyframes fadeInUp {
   0% {
@@ -125,46 +128,18 @@ table {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft; }
 
-@-webkit-keyframes fadeInLeftBig {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-2000px);
-    transform: translateX(-2000px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-
-@keyframes fadeInLeftBig {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-2000px);
-    -ms-transform: translateX(-2000px);
-    transform: translateX(-2000px); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0); } }
-
-.fadeInLeftBig {
-  -webkit-animation-name: fadeInLeftBig;
-  animation-name: fadeInLeftBig; }
-
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1);
     transform: scale(1); }
 
   50% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05); }
 
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1); } }
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03); } }
 
 @keyframes pulse {
   0% {
@@ -173,9 +148,9 @@ table {
     transform: scale(1); }
 
   50% {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1); }
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
 
   100% {
     -webkit-transform: scale(1);
@@ -571,18 +546,18 @@ hr {
       padding-top: 1.3em;
       padding-bottom: 1.3em; } }
 
-.container, .container-thin, .container-thinner, .intro {
+.container, .container-thin, .container-thinner, .intro, .thumbs {
   max-width: 70em;
   margin: 0 auto; }
-  .container .row, .container-thin .row, .container-thinner .row, .intro .row {
+  .container .row, .container-thin .row, .container-thinner .row, .intro .row, .thumbs .row {
     margin-right: -1em;
     margin-left: -1em; }
     @media screen and (max-width: 35em) {
-      .container .row, .container-thin .row, .container-thinner .row, .intro .row {
+      .container .row, .container-thin .row, .container-thinner .row, .intro .row, .thumbs .row {
         margin-right: -0.75em;
         margin-left: -0.75em; } }
     @media screen and (max-width: 25em) {
-      .container .row, .container-thin .row, .container-thinner .row, .intro .row {
+      .container .row, .container-thin .row, .container-thinner .row, .intro .row, .thumbs .row {
         margin-right: -0.65em;
         margin-left: -0.65em; } }
 
@@ -733,7 +708,7 @@ hr {
     animation-name: pulse;
     -webkit-animation-duration: 0.2s; }
 
-.round {
+.round, .toggle, .toggle a.current {
   border-radius: 50em; }
 
 ul.horizontal li {
@@ -783,7 +758,9 @@ ul.horizontal li {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
   background: #565b6d;
-  box-shadow: 0 0.5em 3em rgba(86, 91, 109, 0.25); }
+  box-shadow: 0 0.5em 3em rgba(86, 91, 109, 0.25);
+  border-radius: 0.15em;
+  overflow: hidden; }
   .breakout img {
     display: block; }
   @media screen and (max-width: 74em) {
@@ -820,7 +797,8 @@ ul.horizontal li {
       padding-left: 1.3em; } }
 
 .animated-link, .social a {
-  display: inline-block; }
+  display: inline-block;
+  -webkit-transition: opacity 0.2s ease-in-out; }
   .animated-link img, .social a img {
     box-shadow: 0 0.5em 2em rgba(86, 91, 109, 0.15); }
   .animated-link:hover, .social a:hover {
@@ -846,3 +824,30 @@ ul.horizontal li {
       color: #2697d5; }
   .social.small a {
     font-size: 4.2em; }
+
+.toggle {
+  display: inline-block;
+  background: #565b6d;
+  margin: 1em 0 0 0;
+  padding: 2px; }
+  .toggle li {
+    display: inline; }
+  .toggle a {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 1em 2em;
+    color: #eceef4; }
+    .toggle a:hover {
+      color: #818699; }
+    .toggle a.current {
+      color: #33aea8;
+      background: #fff; }
+
+.thumbs {
+  text-align: center; }
+  .thumbs img {
+    border-radius: 0.15em; }
