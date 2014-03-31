@@ -762,7 +762,9 @@ ul.horizontal li {
   border-radius: 0.15em;
   overflow: hidden; }
   .breakout img {
-    display: block; }
+    display: block;
+    width: 100%;
+    height: auto; }
   @media screen and (max-width: 74em) {
     .breakout {
       width: 100%;
@@ -834,12 +836,14 @@ ul.horizontal li {
     display: inline; }
   .toggle a {
     display: inline-block;
+    height: 20px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.8em;
     font-weight: 400;
     text-decoration: none;
-    padding: 1em 2em;
+    padding: 10px 20px;
+    line-height: 20px;
     color: #eceef4; }
     .toggle a:hover {
       color: #818699; }
@@ -850,4 +854,67 @@ ul.horizontal li {
 .thumbs {
   text-align: center; }
   .thumbs img {
+    width: 100%;
+    height: auto;
     border-radius: 0.15em; }
+
+.modal-overlay {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center; }
+  @media screen and (max-width: 35em) {
+    .modal-overlay {
+      padding: 0.75em; } }
+  @media screen and (max-width: 25em) {
+    .modal-overlay {
+      padding: 0.65em; } }
+  .modal-overlay button {
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    font-family: 'Entypo';
+    font-size: 3em;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    border: 0;
+    line-height: 1em;
+    text-align: center;
+    background: #565b6d;
+    color: #eceef4;
+    cursor: pointer;
+    outline: none; }
+    .modal-overlay button:hover {
+      background: #eceef4;
+      color: #565b6d; }
+  .modal-overlay:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }
+
+.modal {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 5em;
+  min-height: 5em;
+  max-width: 100%;
+  max-height: 100%;
+  background: #565b6d;
+  border-radius: 0.15em;
+  overflow: hidden; }
+  .modal img {
+    position: relative;
+    z-index: 100;
+    max-width: 100%;
+    max-height: 100%; }
