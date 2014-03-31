@@ -74,3 +74,50 @@
 	background: #fff;
 	border-radius: 0.25em;
 }
+
+.animated-link {
+	@extend .animated;
+	display: inline-block;
+
+	img {
+		box-shadow: 0 0.5em 2em rgba($darkGrey, 0.15);
+	}
+
+	&:hover {
+		opacity: 0.8;
+		-webkit-animation-name: pulse;
+		animation-name: pulse;
+		-webkit-animation-duration: 0.2s;
+	}
+}
+
+.social {
+	text-align: center;
+
+	li {
+		display: inline-block;
+	}
+	a {
+		@extend .animated-link;
+		font-family: 'Social';
+		font-size: 6em;
+		text-decoration: none;
+		line-height: 0.5em;
+
+		&.github {
+			color: #999;
+		}
+		&.gplus {
+			color: #dd4b39;
+		}
+		&.rdio {
+			color: #2697d5;
+		}
+	}
+
+	&.small {
+		a {
+			font-size: 4.2em;
+		}
+	}
+}

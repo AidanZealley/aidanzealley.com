@@ -33,22 +33,6 @@
 	}
 }
 
-.social {
-	font-family: 'Social';
-	font-size: 6em;
-	text-decoration: none;
-
-	&.github {
-		color: #999;
-	}
-	&.gplus {
-		color: #dd4b39;
-	}
-	&.rdio {
-		color: #2697d5;
-	}
-}
-
 .center {
 	text-align: center;
 }
@@ -145,15 +129,8 @@
 	border-radius: 50em;
 }
 
-.animated-link {
-	@extend .animated;
-	display: block;
-	box-shadow: 0 0.5em 2em rgba($darkGrey, 0.15);
-
-	&:hover {
-		opacity: 0.8;
-		-webkit-animation-name: pulse;
-		animation-name: pulse;
-		-webkit-animation-duration: 0.2s;
+ul.horizontal {
+	li {
+		display: inline;
 	}
 }
