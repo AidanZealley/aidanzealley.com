@@ -815,9 +815,10 @@ ul.horizontal li {
     display: inline-block; }
   .social a {
     font-family: 'Social';
-    font-size: 6em;
+    font-size: 3em;
     text-decoration: none;
-    line-height: 0.5em; }
+    line-height: 1em;
+    margin: 0 0.1em; }
     .social a.github {
       color: #999; }
     .social a.gplus {
@@ -825,7 +826,7 @@ ul.horizontal li {
     .social a.rdio {
       color: #2697d5; }
   .social.small a {
-    font-size: 4.2em; }
+    font-size: 2.1em; }
 
 .toggle {
   display: inline-block;
@@ -879,23 +880,24 @@ ul.horizontal li {
   .modal-overlay button {
     position: absolute;
     z-index: 200;
-    top: 0;
-    right: 0;
+    top: 0.25em;
+    right: 0.25em;
     font-family: 'Entypo';
     font-size: 3em;
-    width: 1em;
-    height: 1em;
+    width: 0.9em;
+    height: 0.9em;
     padding: 0;
     border: 0;
-    line-height: 1em;
+    line-height: 0.95em;
     text-align: center;
-    background: #565b6d;
-    color: #eceef4;
+    background: #eceef4;
+    color: #565b6d;
     cursor: pointer;
-    outline: none; }
+    outline: none;
+    border-radius: 0.05em; }
     .modal-overlay button:hover {
-      background: #eceef4;
-      color: #565b6d; }
+      background: #565b6d;
+      color: #eceef4; }
   .modal-overlay:before {
     content: '';
     display: inline-block;
