@@ -378,7 +378,8 @@ table {
 
 html {
   font-family: 'Lato', Sans-serif;
-  font-size: 100%; }
+  font-size: 100%;
+  min-height: 100%; }
   @media only screen and (max-width: 35em) {
     html {
       font-size: 92.5%; } }
@@ -387,7 +388,8 @@ html {
       font-size: 85%; } }
 
 body {
-  position: relative; }
+  position: relative;
+  min-height: 100%; }
 
 h1 {
   font-size: 3.2em;
