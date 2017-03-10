@@ -62,15 +62,18 @@ table {
   animation-duration: 0.8s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
-  .animated.delay1, .delay1.button, .delay1.infocard, .delay1.breakout, .delay1.intro, .delay1.animated-link, .social a.delay1 {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s; }
-  .animated.delay2, .delay2.button, .delay2.infocard, .delay2.breakout, .delay2.intro, .delay2.animated-link, .social a.delay2 {
-    -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s; }
-  .animated.delay3, .delay3.button, .delay3.infocard, .delay3.breakout, .delay3.intro, .delay3.animated-link, .social a.delay3 {
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s; }
+
+.animated--delay1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+.animated--delay2 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+
+.animated--delay3 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s; }
 
 @-webkit-keyframes fadeInUp {
   0% {
@@ -380,10 +383,10 @@ html {
   font-family: 'Lato', Sans-serif;
   font-size: 100%;
   min-height: 100%; }
-  @media only screen and (max-width: 35em) {
+  @media all and (max-width: 35em) {
     html {
       font-size: 92.5%; } }
-  @media only screen and (max-width: 25em) {
+  @media all and (max-width: 25em) {
     html {
       font-size: 85%; } }
 
@@ -548,25 +551,25 @@ hr {
       padding-top: 1.3em;
       padding-bottom: 1.3em; } }
 
-.container, .container-thin, .container-thinner, .intro, .thumbs {
+.container, .intro, .thumbs {
   max-width: 70em;
   margin: 0 auto; }
-  .container .row, .container-thin .row, .container-thinner .row, .intro .row, .thumbs .row {
+  .container .row, .intro .row, .thumbs .row {
     margin-right: -1em;
     margin-left: -1em; }
     @media screen and (max-width: 35em) {
-      .container .row, .container-thin .row, .container-thinner .row, .intro .row, .thumbs .row {
+      .container .row, .intro .row, .thumbs .row {
         margin-right: -0.75em;
         margin-left: -0.75em; } }
     @media screen and (max-width: 25em) {
-      .container .row, .container-thin .row, .container-thinner .row, .intro .row, .thumbs .row {
+      .container .row, .intro .row, .thumbs .row {
         margin-right: -0.65em;
         margin-left: -0.65em; } }
 
-.container-thin {
-  max-width: 50em; }
+.container--thin {
+  max-width: 45em; }
 
-.container-thinner, .intro {
+.container--thinner, .intro {
   max-width: 30em; }
 
 .pull-left {
@@ -582,7 +585,11 @@ hr {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding-right: 1em;
-  padding-left: 1em; }
+  padding-left: 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  float: left;
+  width: 100%; }
   @media screen and (max-width: 35em) {
     .col {
       padding-right: 0.75em;
@@ -591,36 +598,28 @@ hr {
     .col {
       padding-right: 0.65em;
       padding-left: 0.65em; } }
-  @media only screen {
-    .col {
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      float: left;
-      width: 100%; } }
 
-.half {
+.col--half {
   margin: 0 0 2em 0; }
-  @media only screen and (min-width: 30em) {
-    .half {
+  @media all and (min-width: 30em) {
+    .col--half {
       width: 50%; } }
 
-.third {
+.col--third {
   margin: 0 0 2em 0; }
-  @media only screen and (min-width: 40em) {
-    .third {
+  @media all and (min-width: 40em) {
+    .col--third {
       width: 33.3333%; } }
-  @media only screen and (min-width: 30em) and (max-width: 40em) {
-    .third {
+  @media all and (min-width: 30em) and (max-width: 40em) {
+    .col--third {
       width: 50%; } }
 
-.quarter {
-  margin: 0 0 2em 0; }
-  @media only screen and (min-width: 45em) {
-    .quarter {
+.col--quarter {
+  margin: 0 0 2em 0;
+  width: 50%; }
+  @media all and (min-width: 40em) {
+    .col--quarter {
       width: 25%; } }
-  @media only screen and (min-width: 30em) and (max-width: 45em) {
-    .quarter {
-      width: 50%; } }
 
 @font-face {
   font-family: 'Entypo';
@@ -652,8 +651,9 @@ hr {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
-  .cover.fixed {
-    background-attachment: fixed; }
+
+.cover--fixed {
+  background-attachment: fixed; }
 
 .button {
   box-sizing: border-box;
@@ -671,44 +671,78 @@ hr {
   border-radius: 10em;
   color: #565b6d;
   border-color: #565b6d; }
-  .button .icon {
-    font-size: 2em;
-    line-height: 0.5em; }
-  .button.small {
-    font-size: 0.6em; }
-  .button.big {
-    font-size: 1em; }
-  .button.accent {
-    color: #d4f2f1;
-    border-color: #33aea8;
-    background: #33aea8; }
-    .button.accent:hover, .button.accent:active {
-      color: #fff;
-      border-color: #2d9a95;
-      background: #2d9a95; }
-  .button.white {
-    color: #818699;
-    border-color: #fffcf9;
-    background: #fffcf9; }
-    .button.white:hover, .button.white:active {
-      color: #565b6d;
-      background: rgba(255, 252, 249, 0.75); }
-  .button.light {
-    color: #bcc3d8;
-    border-color: #bcc3d8; }
-    .button.light:hover, .button.light:active {
-      background: #bcc3d8; }
-  .button.medium {
-    color: #818699;
-    border-color: #818699; }
-    .button.medium:hover, .button.medium:active {
-      background: #818699; }
   .button:hover, .button:active {
     color: #fff;
     background: #565b6d;
     -webkit-animation-name: pulse;
     animation-name: pulse;
     -webkit-animation-duration: 0.2s; }
+
+.button--small {
+  font-size: 0.6em; }
+
+.button--big {
+  font-size: 1em; }
+
+.button--accent {
+  color: #d4f2f1;
+  border-color: #33aea8;
+  background: #33aea8; }
+  .button--accent:hover, .button--accent:active {
+    color: #fff;
+    border-color: #2d9a95;
+    background: #2d9a95; }
+
+.button--white {
+  color: #818699;
+  border-color: #fffcf9;
+  background: #fffcf9; }
+  .button--white:hover, .button--white:active {
+    color: #565b6d;
+    background: rgba(255, 252, 249, 0.75); }
+
+.button--light {
+  color: #bcc3d8;
+  border-color: #bcc3d8; }
+  .button--light:hover, .button--light:active {
+    background: #bcc3d8; }
+
+.button--medium {
+  color: #818699;
+  border-color: #818699; }
+  .button--medium:hover, .button--medium:active {
+    background: #818699; }
+
+.button--not-live {
+  position: relative;
+  pointer-events: none;
+  background: #d4f2f1;
+  border-color: #d4f2f1;
+  color: #ade7e4; }
+  .button--not-live:after {
+    content: "No longer live";
+    display: block;
+    position: absolute;
+    bottom: -2em;
+    left: 50%;
+    height: 1em;
+    width: 7em;
+    margin: 0 0 0 -4.5em;
+    padding: 0.75em 1em;
+    background: #565b6d;
+    text-transform: initial;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: white;
+    line-height: 1.15em;
+    border-radius: 0.25em;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    box-shadow: 0 0.3em 3em rgba(86, 91, 109, 0.3); }
+
+.icon {
+  font-size: 2em;
+  line-height: 0.5em; }
 
 .round, .toggle, .toggle a.current {
   border-radius: 50em; }
@@ -718,22 +752,27 @@ ul.horizontal li {
 
 .block {
   display: block; }
-  .block.rounded {
-    border-radius: 0.25em; }
-  .block.white {
-    background: #fff; }
-  .block.light {
-    background: #eceef4; }
-  .block.medium {
-    background: #818699; }
-  .block.dark {
-    background: #565b6d; }
-    .block.dark h1 {
-      color: #eceef4; }
-    .block.dark h2 {
-      color: #ccd1e1; }
-    .block.dark hr {
-      background: #686e84; }
+
+.block--rounded {
+  border-radius: 0.25em; }
+
+.block--white {
+  background: #fff; }
+
+.block--light {
+  background: #eceef4; }
+
+.block--medium {
+  background: #818699; }
+
+.block--dark {
+  background: #565b6d; }
+  .block--dark h1 {
+    color: #eceef4; }
+  .block--dark h2 {
+    color: #ccd1e1; }
+  .block--dark hr {
+    background: #686e84; }
 
 .infocard {
   box-sizing: border-box;
@@ -753,10 +792,12 @@ ul.horizontal li {
       padding: 1.3em; } }
   .infocard h1 {
     margin: 0.5em 0; }
+  .infocard h2 {
+    text-align: center; }
 
 .breakout {
   width: 70em;
-  margin: 2em 0 3em -12em;
+  margin: 2em 0 3em -14.5em;
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
   background: #565b6d;
@@ -846,7 +887,7 @@ ul.horizontal li {
     font-weight: 400;
     text-decoration: none;
     padding: 10px 20px;
-    line-height: 20px;
+    line-height: 1.75em;
     color: #eceef4; }
     .toggle a:hover {
       color: #818699; }
@@ -921,5 +962,5 @@ ul.horizontal li {
     position: relative;
     z-index: 100;
     display: block;
-    max-width: 100%;
-    max-height: 100%; }
+    max-width: 100vw;
+    max-height: 100vh; }

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 		$('.intro').removeClass('bounceInLeft');
 		$('.intro').addClass('bounceOutRight');
- 
+
 		setTimeout(function(){window.location = linkLocation}, 400);
 	});
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
 		linkLocation = this.href;
 
 		$(this).find('img').addClass('animated bounceOutUp');
- 
+
 		setTimeout(function(){window.location = linkLocation}, 400);
 	});
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 		$('body').append('<div class="modal-overlay animated bounceInUp"></div>');
 		$('.modal-overlay').append('<button id="close-modal">&#10060;</button>');
-		$('.modal-overlay').append('<div class="modal"><div class="spinner"></div>');
+		$('.modal-overlay').append('<div class="modal"></div>');
 		$('.modal').append('<img src="' + image + '" alt="hi"/>');
 
 		return false;

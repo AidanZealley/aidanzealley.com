@@ -41,10 +41,10 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+}
 
-	&.fixed {
-		background-attachment: fixed;
-	}
+.cover--fixed {
+  background-attachment: fixed;
 }
 
 .button {
@@ -64,58 +64,6 @@
 	color: $darkGrey;
 	border-color: $darkGrey;
 
-	.icon {
-		font-size: 2em;
-		line-height: 0.5em;
-	}
-
-	&.small {
-		font-size: 0.6em;
-	}
-
-	&.big {
-		font-size: 1em;
-	}
-
-	&.accent {
-		color: lighten($accent, 45%);
-		border-color: $accent;
-		background: $accent;
-
-		&:hover, &:active {
-			color: #fff;
-			border-color: darken($accent, 5%);
-			background: darken($accent, 5%);
-		}
-	}
-
-	&.white {
-		color: $mediumGrey;
-		border-color: $lightestGrey;
-		background: $lightestGrey;
-
-		&:hover, &:active {
-			color: $darkGrey;
-			background: rgba($lightestGrey, 0.75);
-		}
-	}
-	&.light {
-		color: darken($lightGrey, 15%);
-		border-color: darken($lightGrey, 15%);
-
-		&:hover, &:active {
-			background: darken($lightGrey, 15%);
-		}
-	}
-	&.medium {
-		color: $mediumGrey;
-		border-color: $mediumGrey;
-
-		&:hover, &:active {
-			background: $mediumGrey;
-		}
-	}
-
 	&:hover, &:active {
 		color: #fff;
 		background: $darkGrey;
@@ -123,6 +71,90 @@
 		animation-name: pulse;
 		-webkit-animation-duration: 0.2s;
 	}
+}
+
+.button--small {
+  font-size: 0.6em;
+}
+
+.button--big {
+  font-size: 1em;
+}
+
+.button--accent {
+  color: lighten($accent, 45%);
+  border-color: $accent;
+  background: $accent;
+
+  &:hover, &:active {
+    color: #fff;
+    border-color: darken($accent, 5%);
+    background: darken($accent, 5%);
+  }
+}
+
+.button--white {
+  color: $mediumGrey;
+  border-color: $lightestGrey;
+  background: $lightestGrey;
+
+  &:hover, &:active {
+    color: $darkGrey;
+    background: rgba($lightestGrey, 0.75);
+  }
+}
+
+.button--light {
+  color: darken($lightGrey, 15%);
+  border-color: darken($lightGrey, 15%);
+
+  &:hover, &:active {
+    background: darken($lightGrey, 15%);
+  }
+}
+
+.button--medium {
+  color: $mediumGrey;
+  border-color: $mediumGrey;
+
+  &:hover, &:active {
+    background: $mediumGrey;
+  }
+}
+
+.button--not-live {
+  position: relative;
+  pointer-events: none;
+  background: lighten($accent, 45%);
+  border-color: lighten($accent, 45%);
+  color: lighten($accent, 35%);
+
+  &:after {
+    content: "No longer live";
+    display: block;
+    position: absolute;
+    bottom: -2em;
+    left: 50%;
+    height: 1em;
+    width: 7em;
+    margin: 0 0 0 -4.5em;
+    padding: 0.75em 1em;
+    background: $darkGrey;
+    text-transform: initial;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: white;
+    line-height: 1.15em;
+    border-radius: 0.25em;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    box-shadow: 0 0.3em 3em rgba(86, 91, 109, 0.3);
+  }
+}
+
+.icon {
+  font-size: 2em;
+  line-height: 0.5em;
 }
 
 .round {

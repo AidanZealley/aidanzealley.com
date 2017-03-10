@@ -35,12 +35,11 @@
 		}
 	}
 }
-.container-thin {
-	@extend .container;
-	max-width: 50em;
+.container--thin {
+	max-width: 45em;
 }
-.container-thinner {
-	@extend .container;
+
+.container--thinner {
 	max-width: 30em;
 }
 
@@ -60,37 +59,32 @@
 }
 .col {
 	@include horizontalPadding($gap/2);
-
-	@media only screen {
-		@include box-sizing(border-box);
-		float: left;
-		width: 100%;
-	}
+	@include box-sizing(border-box);
+	float: left;
+	width: 100%;
 }
-.half {
+.col--half {
 	margin: 0 0 $gap 0;
 
-	@media only screen and (min-width: 30em) {
+	@media all and (min-width: 30em) {
 		width: 50%;
 	}
 }
-.third {
+.col--third {
 	margin: 0 0 $gap 0;
 
-	@media only screen and (min-width: 40em) {
+	@media all and (min-width: 40em) {
 		width: 33.3333%;
 	}
-	@media only screen and (min-width: 30em) and (max-width: 40em) {
+	@media all and (min-width: 30em) and (max-width: 40em) {
 		width: 50%;
 	}
 }
-.quarter {
+.col--quarter {
 	margin: 0 0 $gap 0;
+	width: 50%;
 
-	@media only screen and (min-width: 45em) {
+	@media all and (min-width: 40em) {
 		width: 25%;
-	}
-	@media only screen and (min-width: 30em) and (max-width: 45em) {
-		width: 50%;
 	}
 }
